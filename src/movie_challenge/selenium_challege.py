@@ -55,8 +55,8 @@ class RpaChallengeSelenium:
         
         results = []
         for card in cards:
-            title = card.find_element(By.XPATH, MOVIE_CARD_ITEM_TITLE).text
-            overview = card.find_element(By.XPATH, MOVIE_CARD_ITEM_OVERVIEW).get_attribute("innerText")
+            title = card.find_element(By.XPATH, './/div[@class="card-content"]/*[contains(@class, "card-title")]').text
+            overview = card.find_element(By.XPATH, './/div[@class="card-reveal"]/p').get_attribute("innerText")
             results.append({"title": title, "description": overview})
         logger.info(f"Busca realizada retornou {len(results)} filme(s)")
         return results
