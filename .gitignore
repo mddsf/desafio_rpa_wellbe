@@ -4,3 +4,5 @@ output/
 temp/
 .env
 logs/
+__pycache__/
+*.log
