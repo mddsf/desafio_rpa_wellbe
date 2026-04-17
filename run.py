@@ -13,7 +13,7 @@ def main(dashboard_process=None):
     op = input("Opção: ")
     if op not in ["0", "1", "2"]:
         logger.info("Opção inválida!")
-    if op == "0":
+    elif op == "0":
         logger.info("Finalizando...")
         if dashboard_process is not None:
             dashboard_process.terminate()
