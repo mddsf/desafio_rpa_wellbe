@@ -28,7 +28,7 @@ class MovieSummary(Base):
     __tablename__ = "movies_summary"
     id    = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(255))
-    description = Column(Text)
+    description = Column(String(500))
     created_at = Column(DateTime, server_default=func.now())
 
     __table_args__ = (

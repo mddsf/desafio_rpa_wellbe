@@ -42,7 +42,7 @@ def upgrade() -> None:
     op.create_table('movies_summary',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('title', sa.String(length=255), nullable=True),
-    sa.Column('description', sa.Text(), nullable=True),
+    sa.Column('description', sa.String(length=500), nullable=True),
     sa.Column('created_at', sa.DateTime(), server_default=sa.func.now(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('title', 'description', name='uq_title_description')
