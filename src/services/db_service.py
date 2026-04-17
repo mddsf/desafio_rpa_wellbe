@@ -2,6 +2,7 @@ from src.database import get_session
 from src.models import Movie, MovieSummary
 
 def add_movies(movies: list[dict]):
+    """Insere filmes na tabela movies, ignorando registros já existentes."""
     with get_session() as session:
         for item in movies:
             
@@ -31,6 +32,7 @@ def add_movies(movies: list[dict]):
 
 
 def add_movies_selenium(movies: list[dict]):
+    """Insere filmes na tabela movies_summary, ignorando registros já existentes."""
     with get_session() as session:
         for item in movies:
             exists = session.query(MovieSummary).filter_by(

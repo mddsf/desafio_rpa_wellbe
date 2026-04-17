@@ -11,6 +11,7 @@ st.title("Movies Dashboard")
 
 @st.cache_data(ttl=60)
 def load_movies():
+    """Carrega filmes do banco e adiciona colunas auxiliares (year, display_title)."""
     query = text("""
         SELECT id, title, original_title, original_language,
                popularity, release_date, vote_average, vote_count

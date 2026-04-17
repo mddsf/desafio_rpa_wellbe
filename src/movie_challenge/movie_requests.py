@@ -24,7 +24,8 @@ class RpaChallengeRequest:
             return False
 
     def movie_search(self, text):
-        logger.info("Iniciando busca por filme: %s", text)   
+        """Busca filmes na API com paginação e tentativas automáticas em caso de falha."""
+        logger.info("Iniciando busca por filme: %s", text)
         params = {
             "query": text, 
             "api_key": self.api_key,

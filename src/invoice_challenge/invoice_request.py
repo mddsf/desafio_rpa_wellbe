@@ -45,6 +45,7 @@ class InvoiceChallengeRequest:
         return zip_path
     
     def export_to_excel(self, invoices_img_path: list):
+        """Lê as imagens de invoices com OCR e salva os dados em um arquivo Excel."""
         output = f"{TEMP_DIR}/data_invoices.xlsx"
         invoices_data = []
         try:

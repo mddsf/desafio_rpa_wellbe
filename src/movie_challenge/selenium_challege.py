@@ -77,6 +77,7 @@ class RpaChallengeSelenium:
 
 
     def invoice_extraction(self, invoice_list: list):
+        """Percorre a tabela paginada de invoices e baixa as imagens dos números informados."""
         logger.info("Navegando para Invoices")
         try:
             self.get_element(INVOICE_EXTRACTION_MENU, timeout=1).click()

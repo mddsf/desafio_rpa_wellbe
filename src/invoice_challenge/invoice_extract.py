@@ -22,8 +22,8 @@ def extract_text_from_invoice(image_path: str) -> str:
 
     return text.upper()
 
-def extract_data_from_invoice(image_path: str) -> str:
-    
+def extract_data_from_invoice(image_path: str) -> dict:
+    """Lê uma imagem de invoice com OCR e retorna os dados extraídos (número, cliente, data, valores e itens)."""
     text = extract_text_from_invoice(image_path)
     data = {}
 

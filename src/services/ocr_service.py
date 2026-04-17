@@ -21,6 +21,7 @@ class TextExtractor:
             pytesseract.pytesseract.tesseract_cmd = str(tesseract_cmd)
 
     def _preprocess(self, image_path: Path) -> Image.Image:
+        """Prepara a imagem para leitura OCR: converte para cinza e amplia se necessário."""
         img = cv2.imread(str(image_path))
         if img is None:
             raise FileNotFoundError(f"Não foi possível abrir a imagem: {image_path}")
